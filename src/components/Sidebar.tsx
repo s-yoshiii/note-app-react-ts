@@ -18,8 +18,8 @@ const Sidebar = () => {
           <div className="flex flex-col flex-grow px-4 mt-5">
             <nav className="flex-1 space-y-1 bg-white">
               <ul>
-                <li>
-                  <div className="inline-flex items-center w-full px-4 py-2 mt-1 text-base text-gray-900 transition duration-500 ease-in-out transform rounded-lg bg-gray-50 focus:shadow-outline">
+                <li className="flex flex-col px-4 py-2 mt-1 text-base transition duration-500 cursor-pointer ease-in-out transform rounded-lg bg-gray-50 focus:shadow-outline focus:shadow-outline hover:bg-gray-100">
+                  <div className="inline-flex items-center w-full text-gray-900">
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -37,8 +37,11 @@ const Sidebar = () => {
                     </svg>
                     <span className="ml-4">タイトル</span>
                   </div>
-                  <div className="mt-1 text-gray-500 text-sm block w-full">
-                    12 Jun 2019
+                  <p className="leading-relaxed mt-2">
+                    本文が入ります。本文が入ります。
+                  </p>
+                  <div className="mt-4 text-gray-500 text-sm block w-full">
+                    最後の修正日:YYYY.MM.DD
                   </div>
                 </li>
               </ul>
