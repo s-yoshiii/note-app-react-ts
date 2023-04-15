@@ -10,7 +10,7 @@ const Sidebar = () => {
               Note
             </h2>
             <div className="px-4">
-              <button className="px-5 py-2 lg:px-3 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 lg:px-10 rounded-xl hover:bg-blue-700">
+              <button className="px-5 py-2 lg:px-3 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-slate-700 lg:px-10 rounded-md hover:bg-slate-950">
                 追加
               </button>
             </div>
@@ -19,10 +19,7 @@ const Sidebar = () => {
             <nav className="flex-1 space-y-1 bg-white">
               <ul>
                 <li>
-                  <a
-                    className="inline-flex items-center w-full px-4 py-2 mt-1 text-base text-gray-900 transition duration-500 ease-in-out transform rounded-lg bg-gray-50 focus:shadow-outline"
-                    href="#"
-                  >
+                  <div className="inline-flex items-center w-full px-4 py-2 mt-1 text-base text-gray-900 transition duration-500 ease-in-out transform rounded-lg bg-gray-50 focus:shadow-outline">
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -39,7 +36,10 @@ const Sidebar = () => {
                       ></path>
                     </svg>
                     <span className="ml-4">タイトル</span>
-                  </a>
+                  </div>
+                  <div className="mt-1 text-gray-500 text-sm block w-full">
+                    12 Jun 2019
+                  </div>
                 </li>
               </ul>
               <p className="px-4 pt-4 font-medium text-gray-900 uppercase">
