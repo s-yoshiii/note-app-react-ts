@@ -1,12 +1,6 @@
 import { useState } from "react";
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
-type Note = {
-  id: number;
-  title: string;
-  content: string;
-  modDate: number;
-};
 
 function App() {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -23,7 +17,7 @@ function App() {
   };
   return (
     <div className="block md:flex overflow-hidden bg-white rounded-lg">
-      <Sidebar onAddNote={onAddNote} />
+      <Sidebar onAddNote={onAddNote} notes={notes} />
       <Main />
     </div>
   );
