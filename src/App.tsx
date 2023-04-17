@@ -1,4 +1,5 @@
 import { useState } from "react";
+import uuid from "react-uuid";
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
 
@@ -7,7 +8,7 @@ function App() {
   const onAddNote = () => {
     console.log("新しいノートが追加されました。");
     const newNote: Note = {
-      id: 1,
+      id: uuid(),
       title: "新しいノート",
       content: "新しいノートの内容",
       modDate: Date.now(),

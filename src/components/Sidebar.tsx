@@ -26,7 +26,10 @@ const Sidebar: FC<Props> = ({ onAddNote, notes }) => {
             <nav className="flex-1 space-y-1 bg-white">
               <ul>
                 {notes.map((note) => (
-                  <li className="flex flex-col p-4 mt-2 text-base transition duration-500 cursor-pointer ease-in-out transform rounded-lg bg-gray-50 focus:shadow-outline focus:shadow-outline hover:bg-gray-100">
+                  <li
+                    className="flex flex-col p-4 mt-2 text-base transition duration-500 cursor-pointer ease-in-out transform rounded-lg bg-gray-50 focus:shadow-outline focus:shadow-outline hover:bg-gray-100"
+                    key={note.id}
+                  >
                     <div className="flex justify-between">
                       <div className="flex-shrink">
                         <div className="inline-flex items-center w-full text-gray-900">
