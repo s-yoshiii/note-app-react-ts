@@ -1,13 +1,14 @@
 import React, { FC } from "react";
 type Props = {
   onAddNote: () => void;
+  onDeleteNote: (id: string) => void;
   notes: Note[];
 };
 
-const Sidebar: FC<Props> = ({ onAddNote, notes }) => {
+const Sidebar: FC<Props> = ({ onAddNote, notes, onDeleteNote }) => {
   return (
-    <div className="block md:flex md:flex-shrink-0">
-      <div className="flex flex-col md:w-62">
+    <div className="block md:flex md:flex-shrink-0 md:w-96">
+      <div className="flex flex-col md:w-full">
         <div className="flex flex-col flex-grow pt-5 overflow-y-auto bg-white border-r border-gray-50">
           <div className="flex flex-row justify-between items-center flex-shrink-0 px-4">
             <h2 className="block p-2 text-xl font-medium tracking-tighter text-gray-900">
@@ -60,7 +61,10 @@ const Sidebar: FC<Props> = ({ onAddNote, notes }) => {
                         </div>
                       </div>
                       <div className="pl-4 flex-shrink-0">
-                        <button className="px-5 py-2 lg:px-3 text-base font-medium text-center text-slate-700 transition duration-500 ease-in-out transform bg-white border border-slate-700 rounded-md hover:bg-slate-700 hover:text-white">
+                        <button
+                          className="px-5 py-2 lg:px-3 text-base font-medium text-center text-slate-700 transition duration-500 ease-in-out transform bg-white border border-slate-700 rounded-md hover:bg-slate-700 hover:text-white"
+                          onClick={() => onDeleteNote(note.id)}
+                        >
                           削除
                         </button>
                       </div>

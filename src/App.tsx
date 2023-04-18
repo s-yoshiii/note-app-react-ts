@@ -16,9 +16,19 @@ function App() {
     setNotes([...notes, newNote]);
     console.log(notes);
   };
+  const onDeleteNote = (id: string) => {
+    const filterNotes = notes.filter((note) => {
+      return note.id !== id;
+    });
+    setNotes(filterNotes);
+  };
   return (
     <div className="block md:flex overflow-hidden bg-white rounded-lg">
-      <Sidebar onAddNote={onAddNote} notes={notes} />
+      <Sidebar
+        onAddNote={onAddNote}
+        onDeleteNote={onDeleteNote}
+        notes={notes}
+      />
       <Main />
     </div>
   );
