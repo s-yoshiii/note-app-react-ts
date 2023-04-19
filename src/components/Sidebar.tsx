@@ -1,11 +1,19 @@
-import React, { FC } from "react";
+import React, { Dispatch, FC } from "react";
 type Props = {
   onAddNote: () => void;
   onDeleteNote: (id: string) => void;
   notes: Note[];
+  activeNote: boolean | string;
+  setActiveNote: Dispatch<boolean | string>;
 };
 
-const Sidebar: FC<Props> = ({ onAddNote, notes, onDeleteNote }) => {
+const Sidebar: FC<Props> = ({
+  onAddNote,
+  notes,
+  onDeleteNote,
+  activeNote,
+  setActiveNote,
+}) => {
   return (
     <div className="block md:flex md:flex-shrink-0 md:w-96">
       <div className="flex flex-col md:w-full">
@@ -28,8 +36,11 @@ const Sidebar: FC<Props> = ({ onAddNote, notes, onDeleteNote }) => {
               <ul>
                 {notes.map((note) => (
                   <li
-                    className="flex flex-col p-4 mt-2 text-base transition duration-500 cursor-pointer ease-in-out transform rounded-lg bg-gray-50 focus:shadow-outline focus:shadow-outline hover:bg-gray-100"
+                    className={`flex flex-col p-4 mt-2 text-base transition duration-500 cursor-pointer ease-in-out transform rounded-lg bg-gray-50 focus:shadow-outline focus:shadow-outline hover:bg-gray-100 ${
+                      note.id === activeNote && "bg-gray-300"
+                    }`}
                     key={note.id}
+                    onClick={() => setActiveNote(note.id)}
                   >
                     <div className="flex justify-between">
                       <div className="flex-shrink">
