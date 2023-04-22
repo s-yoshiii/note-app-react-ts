@@ -24,7 +24,7 @@ function App() {
     setNotes(filterNotes);
   };
   return (
-    <div className="block md:flex overflow-hidden bg-white rounded-lg">
+    <div className="block md:flex bg-white rounded-lg min-h-screen">
       <Sidebar
         onAddNote={onAddNote}
         onDeleteNote={onDeleteNote}

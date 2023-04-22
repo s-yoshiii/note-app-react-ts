@@ -2,14 +2,11 @@ import React from "react";
 
 const Main = () => {
   return (
-    <div className="flex flex-col flex-1 w-fit overflow-hidden">
-      <div className="py-8 px-4 mx-auto lg:py-16">
-        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
-          Add a new product
-        </h2>
+    <div className="flex flex-col flex-1 w-full overflow-auto">
+      <div className="py-8 px-4 mx-auto w-full">
         <form action="#">
-          <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-            <div className="sm:col-span-2">
+          <div className="grid gap-4 sm:gap-6">
+            <div>
               <label
                 htmlFor="title"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -26,7 +23,7 @@ const Main = () => {
               />
             </div>
 
-            <div className="sm:col-span-2">
+            <div>
               <label
                 htmlFor="description"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -41,13 +38,13 @@ const Main = () => {
               ></textarea>
             </div>
           </div>
-          <button
-            type="submit"
-            className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
-          >
-            Add product
-          </button>
         </form>
+      </div>
+      <div className="py-8 px-4 mx-auto w-full bg-slate-100 h-full">
+        <h3 className="text-xl font-semibold">タイトルタイトル</h3>
+        <div className="mt-4">
+          プレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュー
+        </div>
       </div>
     </div>
   );
