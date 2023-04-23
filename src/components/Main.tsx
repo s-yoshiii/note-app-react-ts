@@ -1,6 +1,17 @@
-import React from "react";
-
-const Main = () => {
+import React, { FC } from "react";
+type Props = {
+  activeNote: boolean | string;
+  getActiveNote: () => Note;
+};
+const Main: FC<Props> = ({ activeNote, getActiveNote }) => {
+  console.log(activeNote);
+  if (!activeNote) {
+    return (
+      <div className="py-8 px-4 mx-auto w-full">
+        ノートが選択されていません。
+      </div>
+    );
+  }
   return (
     <div className="flex flex-col flex-1 w-full overflow-auto">
       <div className="py-8 px-4 mx-auto w-full">
@@ -41,10 +52,8 @@ const Main = () => {
         </form>
       </div>
       <div className="py-8 px-4 mx-auto w-full bg-slate-100 h-full">
-        <h3 className="text-xl font-semibold">タイトルタイトル</h3>
-        <div className="mt-4">
-          プレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュープレビュー
-        </div>
+        <h3 className="text-xl font-semibold">{activeNote.title}</h3>
+        <div className="mt-4">{activeNote.content}</div>
       </div>
     </div>
   );

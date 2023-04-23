@@ -4,7 +4,7 @@ type Props = {
   onDeleteNote: (id: string) => void;
   notes: Note[];
   activeNote: boolean | string;
-  setActiveNote: Dispatch<boolean | string>;
+  setActiveNote: React.Dispatch<React.SetStateAction<boolean | string>>;
 };
 
 const Sidebar: FC<Props> = ({
