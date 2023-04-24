@@ -1,11 +1,9 @@
 import React, { FC } from "react";
 type Props = {
-  activeNote: boolean | string;
   getActiveNote: () => Note;
 };
-const Main: FC<Props> = ({ activeNote, getActiveNote }) => {
-  console.log(activeNote);
-  if (!activeNote) {
+const Main: FC<Props> = ({ getActiveNote }) => {
+  if (!getActiveNote) {
     return (
       <div className="py-8 px-4 mx-auto w-full">
         ノートが選択されていません。
@@ -52,8 +50,8 @@ const Main: FC<Props> = ({ activeNote, getActiveNote }) => {
         </form>
       </div>
       <div className="py-8 px-4 mx-auto w-full bg-slate-100 h-full">
-        <h3 className="text-xl font-semibold">{activeNote.title}</h3>
-        <div className="mt-4">{activeNote.content}</div>
+        <h3 className="text-xl font-semibold">{getActiveNote.title}</h3>
+        <div className="mt-4">{getActiveNote.content}</div>
       </div>
     </div>
   );

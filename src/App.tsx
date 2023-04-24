@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   const [notes, setNotes] = useState<Note[]>([]);
-  const [activeNote, setActiveNote] = useState<boolean | string>(false);
+  const [activeNote, setActiveNote] = useState<string>("");
   const onAddNote = () => {
     console.log("新しいノートが追加されました。");
     const newNote: Note = {
@@ -24,6 +24,7 @@ function App() {
     setNotes(filterNotes);
   };
   const getActiveNote = () => {
+    if (!activeNote) return;
     return notes.find((note) => note.id === activeNote);
   };
   return (
@@ -35,7 +36,7 @@ function App() {
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main activeNote={activeNote} getActiveNote={getActiveNote()} />
+      <Main getActiveNote={getActiveNote()} />
     </div>
   );
 }

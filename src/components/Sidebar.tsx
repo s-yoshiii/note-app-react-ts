@@ -3,8 +3,8 @@ type Props = {
   onAddNote: () => void;
   onDeleteNote: (id: string) => void;
   notes: Note[];
-  activeNote: boolean | string;
-  setActiveNote: React.Dispatch<React.SetStateAction<boolean | string>>;
+  activeNote: string;
+  setActiveNote: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const Sidebar: FC<Props> = ({
@@ -14,6 +14,7 @@ const Sidebar: FC<Props> = ({
   activeNote,
   setActiveNote,
 }) => {
+  console.log(activeNote);
   return (
     <div className="block md:flex md:flex-shrink-0 md:w-96">
       <div className="flex flex-col md:w-full">
