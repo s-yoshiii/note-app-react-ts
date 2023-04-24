@@ -15,7 +15,6 @@ function App() {
       modDate: Date.now(),
     };
     setNotes([...notes, newNote]);
-    console.log(notes);
   };
   const onDeleteNote = (id: string) => {
     const filterNotes = notes.filter((note) => {
@@ -24,9 +23,19 @@ function App() {
     setNotes(filterNotes);
   };
   const getActiveNote = () => {
-    if (!activeNote) return;
     return notes.find((note) => note.id === activeNote);
   };
+  const onUpdateNote = (updatedNote: string) => {
+    const updatedNoteArr = notes.map((note) => {
+      if (note.id === updatedNote) {
+        return updatedNote;
+      } else {
+        return note;
+      }
+      setNotes(updatedNoteArr);
+    });
+  };
+
   return (
     <div className="block md:flex bg-white rounded-lg min-h-screen">
       <Sidebar
@@ -36,7 +45,7 @@ function App() {
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main getActiveNote={getActiveNote()} />
+      <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
     </div>
   );
 }
