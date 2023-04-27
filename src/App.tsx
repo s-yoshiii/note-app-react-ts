@@ -25,9 +25,9 @@ function App() {
   const getActiveNote = () => {
     return notes.find((note) => note.id === activeNote);
   };
-  const onUpdateNote = (updatedNote: string) => {
+  const onUpdateNote = (updatedNote: Note) => {
     const updatedNoteArr = notes.map((note) => {
-      if (note.id === updatedNote) {
+      if (note.id === updatedNote.id) {
         return updatedNote;
       } else {
         return note;

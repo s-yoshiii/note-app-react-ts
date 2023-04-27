@@ -1,9 +1,17 @@
 import React, { FC } from "react";
 type Props = {
   activeNote: Note;
+  onUpdateNote: (key: string, value: string) => void;
 };
 const Main: FC<Props> = ({ activeNote, onUpdateNote }) => {
-  const onEditNote = () => {};
+  const onEditNote = (key: String, value: String): void => {
+    onUpdateNote({
+      ...activeNote,
+      [key]: value,
+      modDate: Date.now(),
+    });
+  };
+  console.log(activeNote);
   if (!activeNote) {
     return (
       <div className="py-8 px-4 mx-auto w-full">
@@ -31,7 +39,6 @@ const Main: FC<Props> = ({ activeNote, onUpdateNote }) => {
                 placeholder="Type product name"
                 value={activeNote.title}
                 onChange={(e) => onEditNote("title", e.target.value)}
-                required
               />
             </div>
 
