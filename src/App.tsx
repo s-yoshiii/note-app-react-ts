@@ -45,7 +45,7 @@ function App() {
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
+      <Main selectedNote={getActiveNote()} onUpdateNote={onUpdateNote} />
     </div>
   );
 }
